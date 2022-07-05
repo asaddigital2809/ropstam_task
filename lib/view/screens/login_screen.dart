@@ -83,6 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(height: height * 0.04,),
                         InkWell(
                           onTap: ()async{
+                            FocusScope.of(context).unfocus();
                             controller.isLoading = true;
                             await controller.loginMethod(controller.emailController.text, controller.passController.text);
                             if(controller.status == 200){
